@@ -134,7 +134,7 @@ impl RedisConnection {
         timeout: usize,
     ) -> Result<Option<(String, String)>, RedisError> {
         self.connection
-            .brpop(self.namespaced_keys(keys), timeout)
+            .brpop(self.namespaced_keys(keys), timeout as f64)
             .await
     }
 
