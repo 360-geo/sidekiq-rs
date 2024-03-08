@@ -12,6 +12,7 @@ readme = "README.md"
 
 [features]
 default = ["rss-stats"]
+with-redis-rustls-tokio-comp = ["redis/tokio-rustls-comp"]
 
 # There is currently a dependency bug for mac in the `darwin-libproc` crate making it so
 # cargo cannot resolve deps. Once resolved we may choose to remove this feature flag.
