@@ -150,7 +150,7 @@ impl RedisConnection {
 
     pub async fn expire(&mut self, key: String, value: usize) -> Result<usize, RedisError> {
         self.connection
-            .expire(self.namespaced_key(key), value)
+            .expire(self.namespaced_key(key), value.try_into().unwrap())
             .await
     }
 
